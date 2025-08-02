@@ -1,5 +1,6 @@
 import streamlit as st
 from datetime import datetime
+from PIL import Image
 
 
 # 🔁 Utility Functions
@@ -38,7 +39,8 @@ if section == "Overview":
         Understand how your birth energies align with mobile vibrations 🌟  
         Navigate through tabs to begin your exploration.
     """)
-    st.image("E:\Projects\PyCharm\mobile\assets\img1.png",width=100)
+    img = Image.open("assets/img1.png")
+    st.image(img,width=100)
 
 # 🔍 Check Lucky Numbers Section
 elif section == "Check Lucky Numbers":

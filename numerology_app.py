@@ -38,7 +38,7 @@ if section == "Overview":
         Understand how your birth energies align with mobile vibrations 🌟  
         Navigate through tabs to begin your exploration.
     """)
-    st.image("E:\Projects\PyCharm\mobile\img\img1.png",width=100)
+    st.image("E:\Projects\PyCharm\mobile\assets\img1.png",width=100)
 
 # 🔍 Check Lucky Numbers Section
 elif section == "Check Lucky Numbers":

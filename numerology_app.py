@@ -34,7 +34,8 @@ with tab1:
             Navigate through tabs to begin your exploration.
         """)
     img = Image.open("assets/img1.png")
-    st.image(img, use_container_width=True)
+
+    st.image(img, width=150)
 with tab2:
     st.title("🔍 Discover Your Lucky Numbers")
 

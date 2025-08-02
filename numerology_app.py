@@ -25,25 +25,17 @@ def get_lucky_and_avoid_numbers(num):
     return table.get(num, {'lucky': [], 'avoid': []})
 
 
-# 🎨 Sidebar Navigation
-st.sidebar.title("🔢 Numerology Navigator")
-st.sidebar.markdown("Use this tool to find lucky numbers based on your DOB and mobile.")
-
-section = st.sidebar.radio("Choose Section", ["Overview", "Check Lucky Numbers", "Evaluate Mobile Number"])
-
-# 🏠 Overview Section
-if section == "Overview":
+tab1, tab2, tab3 = st.tabs(["🏠 Overview", "🔍 Lucky Numbers", "📱 Mobile Check"])
+with tab1:
     st.title("📿 Mobile Number Numerology Advisor")
     st.markdown("""
-        Welcome to your personal numerology dashboard!  
-        Understand how your birth energies align with mobile vibrations 🌟  
-        Navigate through tabs to begin your exploration.
-    """)
+            Welcome to your personal numerology dashboard!  
+            Understand how your birth energies align with mobile vibrations 🌟  
+            Navigate through tabs to begin your exploration.
+        """)
     img = Image.open("assets/img1.png")
-    st.image(img,width=100)
-
-# 🔍 Check Lucky Numbers Section
-elif section == "Check Lucky Numbers":
+    st.image(img, use_container_width=True)
+with tab2:
     st.title("🔍 Discover Your Lucky Numbers")
 
     default_dob = datetime(1990, 1, 1)
@@ -71,8 +63,7 @@ elif section == "Check Lucky Numbers":
                               ", ".join(map(str, common_avoid)) if common_avoid else "None 🎉"]
         })
 
-# 📱 Mobile Number Section
-elif section == "Evaluate Mobile Number":
+with tab3:
     st.title("📱 Check Mobile Number Vibrational Match")
 
     mobile = st.text_input("Enter a 10-digit Mobile Number")
